@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11436B3D258293B4006496DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436B3C258293B4006496DF /* Constants.swift */; };
 		118A8ED6257BEEF600A5F3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED5257BEEF600A5F3F1 /* AppDelegate.swift */; };
 		118A8ED8257BEEF600A5F3F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED7257BEEF600A5F3F1 /* SceneDelegate.swift */; };
 		118A8EDA257BEEF600A5F3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED9257BEEF600A5F3F1 /* ViewController.swift */; };
@@ -14,12 +15,10 @@
 		118A8EDF257BEEF800A5F3F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118A8EDE257BEEF800A5F3F1 /* Assets.xcassets */; };
 		118A8EE2257BEEF800A5F3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118A8EE0257BEEF800A5F3F1 /* LaunchScreen.storyboard */; };
 		118A8F1F257C238100A5F3F1 /* HouseHoldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F1E257C238100A5F3F1 /* HouseHoldViewController.swift */; };
-		118A8F24257C24CB00A5F3F1 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F23257C24CB00A5F3F1 /* SelectionViewController.swift */; };
 		118A8F2C257C32A800A5F3F1 /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F2B257C32A800A5F3F1 /* SelectorViewController.swift */; };
 		118A8F2F257C35D500A5F3F1 /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F2E257C35D500A5F3F1 /* Total.swift */; };
 		118A8F32257C389000A5F3F1 /* GoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F31257C389000A5F3F1 /* GoodsViewController.swift */; };
 		118A8F35257C38CF00A5F3F1 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F34257C38CF00A5F3F1 /* FoodsViewController.swift */; };
-		118A8F38257C38EC00A5F3F1 /* TransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8F37257C38EC00A5F3F1 /* TransportationViewController.swift */; };
 		482E56A0257C662400D6D73F /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E569F257C662400D6D73F /* NewTransportationViewController.swift */; };
 		48AFA976257C7F6F004344A1 /* Logov3.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AFA975257C7F6E004344A1 /* Logov3.png */; };
 		48C2E44A257D237A001BAA9C /* excellentScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */; };
@@ -31,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11436B3C258293B4006496DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		118A8ED2257BEEF600A5F3F1 /* HackDukeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackDukeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118A8ED5257BEEF600A5F3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118A8ED7257BEEF600A5F3F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,12 +40,10 @@
 		118A8EE1257BEEF800A5F3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118A8EE3257BEEF800A5F3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		118A8F1E257C238100A5F3F1 /* HouseHoldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseHoldViewController.swift; sourceTree = "<group>"; };
-		118A8F23257C24CB00A5F3F1 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		118A8F2B257C32A800A5F3F1 /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		118A8F2E257C35D500A5F3F1 /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		118A8F31257C389000A5F3F1 /* GoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsViewController.swift; sourceTree = "<group>"; };
 		118A8F34257C38CF00A5F3F1 /* FoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
-		118A8F37257C38EC00A5F3F1 /* TransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationViewController.swift; sourceTree = "<group>"; };
 		482E569F257C662400D6D73F /* NewTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		48AFA975257C7F6E004344A1 /* Logov3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logov3.png; sourceTree = "<group>"; };
 		48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = excellentScoreViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +92,7 @@
 				118A8EDE257BEEF800A5F3F1 /* Assets.xcassets */,
 				118A8EE0257BEEF800A5F3F1 /* LaunchScreen.storyboard */,
 				118A8EE3257BEEF800A5F3F1 /* Info.plist */,
+				11436B3C258293B4006496DF /* Constants.swift */,
 				118A8F2E257C35D500A5F3F1 /* Total.swift */,
 			);
 			path = HackDukeApp;
@@ -104,11 +103,9 @@
 			children = (
 				118A8ED9257BEEF600A5F3F1 /* ViewController.swift */,
 				118A8F1E257C238100A5F3F1 /* HouseHoldViewController.swift */,
-				118A8F23257C24CB00A5F3F1 /* SelectionViewController.swift */,
 				118A8F2B257C32A800A5F3F1 /* SelectorViewController.swift */,
 				118A8F31257C389000A5F3F1 /* GoodsViewController.swift */,
 				118A8F34257C38CF00A5F3F1 /* FoodsViewController.swift */,
-				118A8F37257C38EC00A5F3F1 /* TransportationViewController.swift */,
 				482E569F257C662400D6D73F /* NewTransportationViewController.swift */,
 				48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */,
 				48C2E44D257D2739001BAA9C /* greatScoreViewController.swift */,
@@ -191,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				118A8F24257C24CB00A5F3F1 /* SelectionViewController.swift in Sources */,
 				118A8F2C257C32A800A5F3F1 /* SelectorViewController.swift in Sources */,
 				482E56A0257C662400D6D73F /* NewTransportationViewController.swift in Sources */,
 				48C2E457257D2DC3001BAA9C /* poorScoreViewController.swift in Sources */,
@@ -205,7 +201,7 @@
 				118A8ED6257BEEF600A5F3F1 /* AppDelegate.swift in Sources */,
 				118A8ED8257BEEF600A5F3F1 /* SceneDelegate.swift in Sources */,
 				48C2E44A257D237A001BAA9C /* excellentScoreViewController.swift in Sources */,
-				118A8F38257C38EC00A5F3F1 /* TransportationViewController.swift in Sources */,
+				11436B3D258293B4006496DF /* Constants.swift in Sources */,
 				118A8F32257C389000A5F3F1 /* GoodsViewController.swift in Sources */,
 				48C2E454257D2C89001BAA9C /* fairScoreViewController.swift in Sources */,
 			);

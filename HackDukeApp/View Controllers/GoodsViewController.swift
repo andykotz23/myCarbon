@@ -43,11 +43,12 @@ class GoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func leaveGoods(_ sender: UIButton) {
         Total.subTotal = Float(dicPick[pickedFood]!)*Float(unitInput.text!)!
-        self.performSegue(withIdentifier: "goodsToSelector", sender: self)
+        self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
+        //dismiss(animated: true, completion: nil)
     }
 //    @IBAction func getOut(_ sender: UIButton) {
 //        Total.subTotal = Float(dicPick[pickedFood]!)*Float(unitInput.text!)!;
-//        self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
+//
 //    }
 }
 

@@ -97,7 +97,7 @@ Very Poor: 0 to 10</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GHV-Ju-mgs">
-                                <rect key="frame" x="42" y="146" width="331" height="217"/>
+                                <rect key="frame" x="42" y="146" width="331" height="404"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <string key="text">Your score of 100 indicates that you consumed less than 11 pounds of carbon today. You are conscious of your carbon footprint and are well aware of the impact your actions have on the environment. Keep it up!
@@ -106,32 +106,22 @@ Very Poor: 0 to 10</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-5Q-XKc">
-                                <rect key="frame" x="132" y="37" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-5Q-XKc">
+                                <rect key="frame" x="132" y="37" width="152" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Excellent!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-IB-SfF">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Excellent!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-IB-SfF">
                                 <rect key="frame" x="152" y="88" width="97" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.090175218880176544" green="0.94096273183822632" blue="0.03535020723938942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-6g-taz">
-                                <rect key="frame" x="42" y="402" width="331" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">We all have a responsibility to help keep our planet healthy and safe. Thank you for taking action to be more environmentally conscious! 
-</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logov3.png" translatesAutoresizingMaskIntoConstraints="NO" id="80y-6A-iZM">
-                                <rect key="frame" x="78" y="551" width="259" height="195"/>
+                                <rect key="frame" x="78" y="572" width="259" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -140,12 +130,14 @@ Very Poor: 0 to 10</string>
                     </view>
                     <navigationItem key="navigationItem" id="DWV-2J-WjV"/>
                     <connections>
+                        <outlet property="messageToUser" destination="GHV-Ju-mgs" id="GPe-3b-9Z5"/>
                         <outlet property="userScore" destination="XLY-5Q-XKc" id="1QE-dR-UgL"/>
+                        <outlet property="wordGoodness" destination="z7q-IB-SfF" id="j89-lf-W94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq8-76-djJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250.7246376811595" y="-220.3125"/>
+            <point key="canvasLocation" x="763.768115942029" y="-643.52678571428567"/>
         </scene>
         <!--Selector View Controller-->
         <scene sceneID="PMx-PR-O24">
@@ -162,7 +154,7 @@ Very Poor: 0 to 10</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jih-ac-hBq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jih-ac-hBq">
                                 <rect key="frame" x="117" y="75" width="185" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
@@ -403,8 +395,8 @@ Very Poor: 0 to 10</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which of these have you used today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKK-bb-UV5">
-                                <rect key="frame" x="20" y="20" width="383" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which of these have you bought today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKK-bb-UV5">
+                                <rect key="frame" x="20" y="20" width="383" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
@@ -445,7 +437,7 @@ Very Poor: 0 to 10</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPd-FI-EZa">
-                                <rect key="frame" x="0.0" y="75" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="83" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -619,7 +611,7 @@ Very Poor: 0 to 10</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which of these have you used today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-2a-vWH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which of these have you eaten today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-2a-vWH">
                                 <rect key="frame" x="34" y="32" width="360" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -677,55 +669,6 @@ Very Poor: 0 to 10</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN3-yO-VpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4960.8695652173919" y="1056.0267857142858"/>
-        </scene>
-        <!--Excellent Score View Controller-->
-        <scene sceneID="hK7-Wy-JDY">
-            <objects>
-                <viewController id="pR2-qJ-MHm" customClass="excellentScoreViewController" customModule="HackDukeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WT2-tv-qcZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTe-0W-Jcl">
-                                <rect key="frame" x="144" y="70" width="129" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Excellent!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-qt-Jdz">
-                                <rect key="frame" x="144" y="164" width="110" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.090175218880176544" green="0.94096273183822632" blue="0.03535020723938942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sAp-ab-tCo">
-                                <rect key="frame" x="88" y="230" width="240" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">Your score of 100 indicates that you consumed less than 11 pounds of carbon today. You are conscious of your carbon footprint and are well aware of the impact your actions have on the environment. Keep it up!
-</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logov3.png" translatesAutoresizingMaskIntoConstraints="NO" id="pF7-kd-PgZ">
-                                <rect key="frame" x="88" y="565" width="240" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bbK-ze-tMN"/>
-                        <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="t9S-YE-3aD"/>
-                    <connections>
-                        <outlet property="userScore" destination="iTe-0W-Jcl" id="IxM-4J-00Q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IWX-0j-dcx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2250.7246376811595" y="-220.3125"/>
         </scene>
         <!--Great Score View Controller-->
         <scene sceneID="1HL-pu-spd">
@@ -843,7 +786,7 @@ Very Poor: 0 to 10</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lr8-6z-kkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540.5797101449277" y="-983.03571428571422"/>
+            <point key="canvasLocation" x="1588" y="-1017"/>
         </scene>
         <!--Fair Score View Controller-->
         <scene sceneID="NbI-5G-fjz">
@@ -1069,7 +1012,7 @@ Consuming less red meat
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4IW-S7-H2y"/>
+        <segue reference="jMx-yi-RuM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logov3.png" width="462" height="347"/>
@@ -1079,10 +1022,10 @@ Consuming less red meat
         <image name="hackDukePlane" width="130.5" height="130.5"/>
         <image name="hackDukeTrain" width="160.5" height="88"/>
         <image name="jackDukeLeaf" width="154" height="115.5"/>
-        <image name="newFireHack" width="132" height="119"/>
+        <image name="newFireHack" width="132.5" height="119"/>
         <image name="newLightningHack" width="70" height="132"/>
-        <image name="newPropane" width="95" height="132"/>
-        <image name="newWaterHack" width="96" height="132"/>
+        <image name="newPropane" width="95" height="132.5"/>
+        <image name="newWaterHack" width="96.5" height="132.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

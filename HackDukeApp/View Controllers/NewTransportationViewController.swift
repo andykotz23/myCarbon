@@ -90,11 +90,14 @@ class NewTransportationViewController: UIViewController {
             subtotal = Double(userInput.text!)! / Double(userInputCarMPG.text!)! * 6.7
             Total.subTotal = Float(subtotal)
             self.performSegue(withIdentifier: "TranspotoSelector", sender: self)
+            
         }
         else {
-            subtotal = unitpermile * Double(userInput.text!)!
-            Total.subTotal = Float(subtotal)
+            Total.subTotal = Float(unitpermile * (Double(userInput.text!) ?? 0.0))
             self.performSegue(withIdentifier: "TranspotoSelector", sender: self)
+            
         }
+        //dismiss(animated: true, completion: viewDidLoad)
+        
     }
 }
