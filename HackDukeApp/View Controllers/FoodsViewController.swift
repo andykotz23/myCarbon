@@ -6,10 +6,30 @@
 //
 
 import UIKit
-class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+import CoreML
+import Vision
+
+class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    @IBOutlet weak var LABEL: UILabel!
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
     @IBOutlet weak var unitInput: UITextField!
     @IBOutlet weak var picker: UIPickerView!
     var pickedFood: String = ""
+    
+    
+
+    @IBOutlet weak var imageViewPic: UIImageView!
+    let imagePicker = UIImagePickerController()
+    
+    
+    
     
     var pickerData = ["Choose one of the following", "Beef", "Lamb", "Cheese", "Chocolate","Coffee","Pork","Poultry","Farmed Fish","Fresh Fish","Eggs","Milk","Wheat","Sugar","Fruits & Vegetables"]
     var dicPick = ["Empty":0, "Beef":60, "Lamb":24, "Cheese":21, "Chocolate":19,"Coffee":17,"Pork":7,"Poultry":6,"Farmed Fish":5,"Fresh Fish":3,"Eggs":4.5,"Milk":3,"Wheat":1.5,"Sugar":3,"Fruits & Vegetables":0.5]
@@ -24,16 +44,77 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.picker.delegate = self
         self.picker.dataSource = self
         // Input the data into the array
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
 
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    
+    @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
+        print("hi")
+        present(imagePicker, animated: true, completion: nil)
+    }
+
+    
+    func detect(image: CIImage) {
+        print("made it here")
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {// new instance of the ml model
+            fatalError("Loading coreml model failed")
+        }
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Could not reclassify model after processing image")
+            }
+            if let firstResult = results.first {
+                print(firstResult, "HELLO")
+                if firstResult.identifier.contains("hotdog"){
+                    self.navigationController?.title = "Hotdog!"
+                    self.LABEL.text = "hotdog"
+                    self.pickedFood = "Pork"
+                    
+                    
+                } else {
+                    self.navigationController?.title = "Not Hotdog!"
+                    self.pickedFood = "Cheese"
+                    self.LABEL.text = "NOT"
+                    print("Successfully declared not hotdog")
+                }
+            }
+            
+        }
+        let handler = VNImageRequestHandler(ciImage: image)
+        do{
+            try handler.perform([request])
+        }
+        catch{
+            print(error)
+        }
+    }
+        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageViewPic.image = userPickedImage
+            
+            guard let ciImage = CIImage(image: userPickedImage) else {
+                fatalError("Could not convert to CIImage")
+            }
+            detect(image: ciImage)
+    }
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
+    
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+    
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return pickerData.count
+//    }
+        
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
@@ -44,9 +125,13 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
 
-    
-    @IBAction func getOut(_ sender: UIButton) {
-//        print(dicPick[pickedFood]!)
+//
+//    @IBAction func getOut(_ sender: UIButton) {
+////        print(dicPick[pickedFood]!)
+//
+//    }
+
+    @IBAction func addButtonpressed(_ sender: UIButton) {
         Total.subTotal = Float(dicPick[pickedFood]!)*Float(unitInput.text!)!
         //dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: "foodToSelector" , sender: self)
