@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
-class NewTransportationViewController: UIViewController {
+class NewTransportationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    let imagePicker = UIImagePickerController()
+    @IBOutlet weak var imageViewPic: UIImageView!
     
     @IBOutlet weak var unitOutput: UILabel!
     @IBOutlet weak var userInput: UITextField!
@@ -33,22 +37,78 @@ class NewTransportationViewController: UIViewController {
     var car: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        busButton.layer.borderWidth = 1.5
-        busButton.layer.borderColor = UIColor.white.cgColor
-        busButton.layer.cornerRadius = busButton.bounds.width / 8
+        makeBorder(button: busButton)
+        makeBorder(button: carButton)
+        makeBorder(button: trainButton)
+        makeBorder(button: planeButton)
         
-        carButton.layer.borderWidth = 1.5
-        carButton.layer.borderColor = UIColor.white.cgColor
-        carButton.layer.cornerRadius = busButton.bounds.width / 8
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
         
-        trainButton.layer.borderWidth = 1.5
-        trainButton.layer.borderColor = UIColor.white.cgColor
-        trainButton.layer.cornerRadius = busButton.bounds.width / 8
+        self.hideKeyboardWhenTappedAround()
         
-        planeButton.layer.borderWidth = 1.5
-        planeButton.layer.borderColor = UIColor.white.cgColor
-        planeButton.layer.cornerRadius = busButton.bounds.width / 8
+ 
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageViewPic.image = userPickedImage
+            
+            guard let ciImage = CIImage(image: userPickedImage) else {
+                fatalError("Could not convert to CIImage")
+            }
+            detect(image: ciImage)
+            
+            
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func detect(image: CIImage) {
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {// new instance of the ml model
+            fatalError("Loading coreml model failed")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Could not reclassify model after processing image")
+            }
+            if let firstResult = results.first {
+                print(firstResult)
+                /*
+                 this is where the ml result is, could either send result to another class to process the results or have the if statements all here - just need 4 for this class
+                 */
+                if firstResult.identifier.contains("plane"){
+                    self.planePressed(self.planeButton)
+                    //self.navigationController?.title = "Hotdog!"
+                    //self.label.text = "Hotdog"
+                } else if firstResult.identifier.contains("car") {
+                    self.carPressed(self.carButton)
+                } else if firstResult.identifier.contains("train") {
+                    self.trainPressed(self.trainButton)
+                } else if firstResult.identifier.contains("bus") {
+                    self.busPressed(self.busButton)
+                } else {
+                    print("Unable to Identify object")
+                    //self.label.text = "Not Hotdog"
+                }
+            }
+            
+        }
+        let handler = VNImageRequestHandler(ciImage: image)
+        do{
+            try handler.perform([request])
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    
     
     @IBAction func carPressed(_ sender: UIButton) {
 //        milesDriven = Double(userInput.text ?? "0") ?? 0
@@ -58,6 +118,8 @@ class NewTransportationViewController: UIViewController {
         unitOutput.text = units
         unitsforCar = "mpg"
         userOutputCarMPG.text = unitsforCar
+        userInputCarMPG.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        userOutputCarMPG.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 //        subtotal = milesDriven * unitpermile
         car = 1
     }
@@ -66,6 +128,9 @@ class NewTransportationViewController: UIViewController {
         unitpermile = 0.36 // pounds per mile
         units = "miles"
         unitOutput.text = units
+        userInputCarMPG.backgroundColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
+        userOutputCarMPG.textColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
+        
 //        subtotal = milesDriven * unitpermile
     }
     
@@ -74,6 +139,8 @@ class NewTransportationViewController: UIViewController {
         unitpermile = 0.0807 // avg of long distance, commuter, subway
         units = "miles"
         unitOutput.text = units
+        userInputCarMPG.backgroundColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
+        userOutputCarMPG.textColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
 //        subtotal = milesDriven * unitpermile
     }
     
@@ -82,6 +149,8 @@ class NewTransportationViewController: UIViewController {
         unitpermile = 0.176
         units = "miles"
         unitOutput.text = units
+        userInputCarMPG.backgroundColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
+        userOutputCarMPG.textColor = #colorLiteral(red: 0.4646554589, green: 0.7401437163, blue: 0.5439468622, alpha: 1)
 //        subtotal = milesDriven * unitpermile
     }
     
@@ -99,5 +168,28 @@ class NewTransportationViewController: UIViewController {
         }
         //dismiss(animated: true, completion: viewDidLoad)
         
+    }
+    
+    
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func makeBorder(button: UIButton) {
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = busButton.bounds.width / 8
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

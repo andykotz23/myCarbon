@@ -48,6 +48,8 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -69,18 +71,10 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
             if let firstResult = results.first {
                 print(firstResult, "HELLO")
-                if firstResult.identifier.contains("hotdog"){
-                    self.navigationController?.title = "Hotdog!"
-                    self.LABEL.text = "hotdog"
-                    self.pickedFood = "Pork"
-                    
-                    
-                } else {
-                    self.navigationController?.title = "Not Hotdog!"
-                    self.pickedFood = "Cheese"
-                    self.LABEL.text = "NOT"
-                    print("Successfully declared not hotdog")
-                }
+                let first = firstResult.identifier
+                self.setSelfPicked(for: first)
+                print(self.pickedFood)
+                
             }
             
         }
@@ -105,15 +99,7 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-    
-    
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return pickerData.count
-//    }
+
         
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -125,15 +111,55 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
 
-//
-//    @IBAction func getOut(_ sender: UIButton) {
-////        print(dicPick[pickedFood]!)
-//
-//    }
 
     @IBAction func addButtonpressed(_ sender: UIButton) {
-        Total.subTotal = Float(dicPick[pickedFood]!)*Float(unitInput.text!)!
-        //dismiss(animated: true, completion: nil)
+        print(pickedFood)
+        if let food = dicPick[pickedFood] {
+            Total.subTotal = Float(food)*Float(unitInput.text!)!
+            self.performSegue(withIdentifier: "foodToSelector" , sender: self)
+        }
+        print("There was an error - consider trying a better picture")
         self.performSegue(withIdentifier: "foodToSelector" , sender: self)
+        
+        
+        //dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func setSelfPicked(for first: String) {
+        if first.contains("hotdog") || first.contains("pork"){
+            self.pickedFood = "Pork"
+        } else if first.contains("hamburger") || first.contains("cheeseburger") || first.contains("beef"){
+            self.pickedFood = "Beef"
+        } else if first.contains("lamb") {
+            self.pickedFood = "Lamb"
+        } else if first.contains("cheese") {
+            self.pickedFood = "Cheese"
+        } else if first.contains("chocolate") {
+            self.pickedFood = "Chocolate"
+        } else if first.contains("coffee") {
+            self.pickedFood = "Coffee"
+        } else if first.contains("cheese") {
+            self.pickedFood = "Cheese"
+        } else if first.contains("chicken") || first.contains("poultry") || first.contains("rotisserie"){
+            self.pickedFood = "Poultry"
+        } else if first.contains("cheese") {
+            self.pickedFood = "Cheese"
+        } else if first.contains("fish") {
+            self.pickedFood = "Farmed Fish"
+        } else if first.contains("eggs") {
+            self.pickedFood = "Eggs"
+        } else if first.contains("milk") || first.contains("packet") {
+            self.pickedFood = "Milk"
+        } else if first.contains("wheat") || first.contains("bread") {
+            self.pickedFood = "Wheat"
+        } else if first.contains("sugar") {
+            self.pickedFood = "Sugar"
+        } else if first.contains("fruit") || first.contains("vegetable") {
+            self.pickedFood = "Fruits & Vegetables"
+        }
+        else {
+            print("No options were selected from picture")
+        }
     }
 }

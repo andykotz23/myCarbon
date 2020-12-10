@@ -24,21 +24,13 @@ class HouseHoldViewController: UIViewController {
     var units: String = ""
     
     override func viewDidLoad() {
-                energyButton.layer.borderWidth = 1.5
-        energyButton.layer.borderColor = UIColor.white.cgColor
-        energyButton.layer.cornerRadius = energyButton.bounds.width / 8
-        
-                heatWater.layer.borderWidth = 1.5
-        heatWater.layer.borderColor = UIColor.white.cgColor
-        heatWater.layer.cornerRadius = energyButton.bounds.width / 8
-        
-        waterButton.layer.borderWidth = 1.5
-        waterButton.layer.borderColor = UIColor.white.cgColor
-        waterButton.layer.cornerRadius = energyButton.bounds.width / 8
-        
-                propaneButton.layer.borderWidth = 1.5
-        propaneButton.layer.borderColor = UIColor.white.cgColor
-        propaneButton.layer.cornerRadius = energyButton.bounds.width / 8
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        makeBorder(button: energyButton)
+        makeBorder(button: heatWater)
+        makeBorder(button: waterButton)
+        makeBorder(button: propaneButton)
+
     }
     
     @IBAction func heatPressed(_ sender: UIButton) {
@@ -84,5 +76,10 @@ class HouseHoldViewController: UIViewController {
 //    func getSubTotal() -> Float{
 //        return subTotal
 //    }
+    func makeBorder(button: UIButton) {
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = energyButton.bounds.width / 8
+    }
 }
 
