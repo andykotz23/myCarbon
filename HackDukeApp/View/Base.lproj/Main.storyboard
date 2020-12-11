@@ -97,7 +97,7 @@ Very Poor: 0 to 10</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GHV-Ju-mgs">
-                                <rect key="frame" x="42" y="146" width="331" height="404"/>
+                                <rect key="frame" x="42" y="168" width="331" height="404"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <string key="text">Your score of 100 indicates that you consumed less than 11 pounds of carbon today. You are conscious of your carbon footprint and are well aware of the impact your actions have on the environment. Keep it up!
@@ -106,24 +106,24 @@ Very Poor: 0 to 10</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-5Q-XKc">
-                                <rect key="frame" x="132" y="37" width="152" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Excellent!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-IB-SfF">
-                                <rect key="frame" x="152" y="88" width="97" height="36"/>
+                                <rect key="frame" x="159" y="113" width="97" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.090175218880176544" green="0.94096273183822632" blue="0.03535020723938942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logov3.png" translatesAutoresizingMaskIntoConstraints="NO" id="80y-6A-iZM">
-                                <rect key="frame" x="78" y="572" width="259" height="195"/>
+                                <rect key="frame" x="78" y="593" width="259" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-5Q-XKc">
+                                <rect key="frame" x="131" y="70" width="152" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1oo-3L-0tC"/>
                         <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -749,7 +749,7 @@ Very Poor: 0 to 10</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jMx-yi-RuM"/>
+        <segue reference="KYe-x7-qbm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logov3.png" width="462" height="347"/>

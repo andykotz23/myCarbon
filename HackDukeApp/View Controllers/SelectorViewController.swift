@@ -23,13 +23,14 @@ class SelectorViewController: UIViewController{
     
     var totalemissions: Float = 0
     var score: Float = 0
-    
+    //let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Total.value, Total.subTotal)
         Total.value = Total.value + Total.subTotal
         print(Total.value, Total.subTotal)
         dailyTotal.text = "\(String(format: "%.2f", Total.value))lb"
+        
         
 //        let df = DateFormatter()
 //        df.dateFormat = "dd/MM/yyyy HH:mm"
@@ -72,21 +73,7 @@ class SelectorViewController: UIViewController{
 //        }
 //        Total.score = score
 //        print(Total.score)
-//        foodButton.layer.borderWidth = 1.5
-//        foodButton.layer.borderColor = UIColor.white.cgColor
-//        foodButton.layer.cornerRadius = foodButton.bounds.width / 8
-//        
-//        houseButton.layer.borderWidth = 1.5
-//        houseButton.layer.borderColor = UIColor.white.cgColor
-//        houseButton.layer.cornerRadius = foodButton.bounds.width / 8
-//        
-//        transpButton.layer.borderWidth = 1.5
-//        transpButton.layer.borderColor = UIColor.white.cgColor
-//        transpButton.layer.cornerRadius = foodButton.bounds.width / 8
-//        
-//        goodsButton.layer.borderWidth = 1.5
-//        goodsButton.layer.borderColor = UIColor.white.cgColor
-//        goodsButton.layer.cornerRadius = foodButton.bounds.width / 8
+//        f
     }
     
 

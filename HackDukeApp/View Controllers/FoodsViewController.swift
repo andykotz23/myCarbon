@@ -116,7 +116,7 @@ class FoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         print(pickedFood)
         if let food = dicPick[pickedFood] {
             Total.subTotal = Float(food)*Float(unitInput.text!)!
-            self.performSegue(withIdentifier: "foodToSelector" , sender: self)
+            //self.performSegue(withIdentifier: "foodToSelector" , sender: self)
         }
         print("There was an error - consider trying a better picture")
         self.performSegue(withIdentifier: "foodToSelector" , sender: self)

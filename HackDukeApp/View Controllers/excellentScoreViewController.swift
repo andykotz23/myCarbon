@@ -8,7 +8,7 @@
 import UIKit
 
 class excellentScoreViewController: UIViewController {
-    
+    let defaults = UserDefaults.standard
     @IBOutlet weak var wordGoodness: UITextField!
     @IBOutlet weak var messageToUser: UITextView!
     @IBOutlet weak var userScore: UILabel!
@@ -32,6 +32,11 @@ class excellentScoreViewController: UIViewController {
         Total.score = score
         let K = Constants()
         userScore.text = ("Score: \(score)")
+        var keepTrackOfScores = (defaults.object(forKey: "keepTrack") as? [Int]) ?? [Int]()
+        keepTrackOfScores.append(Int(ceilf(score)))
+        defaults.set(keepTrackOfScores,forKey: "keepTrack")
+        let currList = defaults.object(forKey: "keepTrack") ?? 0
+        print(currList,type(of: currList))
         switch Total.score {
         case 100:
             messageToUser.text = K.excellentStr + "\n" + K.endStr + "\n" 
