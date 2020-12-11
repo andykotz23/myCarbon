@@ -115,7 +115,12 @@ class GoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var unitInput: UITextField!
     
     @IBAction func leaveGoods(_ sender: UIButton) {
-        Total.subTotal = Float(dicPick[pickedFood]!)*Float(unitInput.text!)!
+        if let thing = dicPick[pickedFood] {
+            Total.subTotal = Float(thing)*Float(unitInput.text!)!
+            self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
+        }
+        print("Try again with better picture")
+        
         self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
         //dismiss(animated: true, completion: nil)
     }
