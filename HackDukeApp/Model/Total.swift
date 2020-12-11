@@ -10,4 +10,5 @@ class Total {
     static var value: Float = 0.0
     static var subTotal: Float = 0.0
     static var score: Float = 0.0
+    static var dataList: [Int] = [Int]()
 }

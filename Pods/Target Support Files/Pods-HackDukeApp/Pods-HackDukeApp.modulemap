@@ -1,0 +1,6 @@
+framework module Pods_HackDukeApp {
+  umbrella header "Pods-HackDukeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

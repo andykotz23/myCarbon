@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		11436B3D258293B4006496DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436B3C258293B4006496DF /* Constants.swift */; };
 		11436B4C2582A256006496DF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 11436B4B2582A256006496DF /* Inceptionv3.mlmodel */; };
 		11436B4F2582A291006496DF /* MLClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11436B4E2582A291006496DF /* MLClass.swift */; };
+		118705772583DD6300847644 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118705762583DD6300847644 /* Graph.swift */; };
+		1187057E2583E34B00847644 /* BarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187057D2583E34B00847644 /* BarTableViewController.swift */; };
+		118705812583E35C00847644 /* LineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118705802583E35C00847644 /* LineTableViewController.swift */; };
 		118A8ED6257BEEF600A5F3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED5257BEEF600A5F3F1 /* AppDelegate.swift */; };
 		118A8ED8257BEEF600A5F3F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED7257BEEF600A5F3F1 /* SceneDelegate.swift */; };
 		118A8EDA257BEEF600A5F3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A8ED9257BEEF600A5F3F1 /* ViewController.swift */; };
@@ -24,12 +27,16 @@
 		482E56A0257C662400D6D73F /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E569F257C662400D6D73F /* NewTransportationViewController.swift */; };
 		48AFA976257C7F6F004344A1 /* Logov3.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AFA975257C7F6E004344A1 /* Logov3.png */; };
 		48C2E44A257D237A001BAA9C /* excellentScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */; };
+		5BBADF2D18451779FD58DB43 /* Pods_HackDukeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C87AC947D0315AB1234F02 /* Pods_HackDukeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11436B3C258293B4006496DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11436B4B2582A256006496DF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		11436B4E2582A291006496DF /* MLClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLClass.swift; sourceTree = "<group>"; };
+		118705762583DD6300847644 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		1187057D2583E34B00847644 /* BarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewController.swift; sourceTree = "<group>"; };
+		118705802583E35C00847644 /* LineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewController.swift; sourceTree = "<group>"; };
 		118A8ED2257BEEF600A5F3F1 /* HackDukeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackDukeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118A8ED5257BEEF600A5F3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118A8ED7257BEEF600A5F3F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,9 @@
 		482E569F257C662400D6D73F /* NewTransportationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		48AFA975257C7F6E004344A1 /* Logov3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logov3.png; sourceTree = "<group>"; };
 		48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = excellentScoreViewController.swift; sourceTree = "<group>"; };
+		56C87AC947D0315AB1234F02 /* Pods_HackDukeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackDukeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8179EB46A05285D27543A69A /* Pods-HackDukeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDukeApp.debug.xcconfig"; path = "Target Support Files/Pods-HackDukeApp/Pods-HackDukeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E0511A8AEA36EEACAF9FF275 /* Pods-HackDukeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDukeApp.release.xcconfig"; path = "Target Support Files/Pods-HackDukeApp/Pods-HackDukeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBADF2D18451779FD58DB43 /* Pods_HackDukeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,7 @@
 				11436B3C258293B4006496DF /* Constants.swift */,
 				118A8F2E257C35D500A5F3F1 /* Total.swift */,
 				11436B4E2582A291006496DF /* MLClass.swift */,
+				118705762583DD6300847644 /* Graph.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +95,8 @@
 			children = (
 				118A8ED4257BEEF600A5F3F1 /* HackDukeApp */,
 				118A8ED3257BEEF600A5F3F1 /* Products */,
+				E74EB67F05BF2D9241674EE7 /* Pods */,
+				31DDF90785E3A051CC1F5E88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,7 +114,7 @@
 				11436B4B2582A256006496DF /* Inceptionv3.mlmodel */,
 				118A8ED5257BEEF600A5F3F1 /* AppDelegate.swift */,
 				118A8ED7257BEEF600A5F3F1 /* SceneDelegate.swift */,
-				118A8F21257C239000A5F3F1 /* View Controllers */,
+				118A8F21257C239000A5F3F1 /* Controllers */,
 				11436B492582A0DF006496DF /* View */,
 				118A8EDE257BEEF800A5F3F1 /* Assets.xcassets */,
 				118A8EE3257BEEF800A5F3F1 /* Info.plist */,
@@ -110,7 +124,7 @@
 			path = HackDukeApp;
 			sourceTree = "<group>";
 		};
-		118A8F21257C239000A5F3F1 /* View Controllers */ = {
+		118A8F21257C239000A5F3F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				118A8ED9257BEEF600A5F3F1 /* ViewController.swift */,
@@ -120,8 +134,27 @@
 				118A8F34257C38CF00A5F3F1 /* FoodsViewController.swift */,
 				482E569F257C662400D6D73F /* NewTransportationViewController.swift */,
 				48C2E449257D237A001BAA9C /* excellentScoreViewController.swift */,
+				1187057D2583E34B00847644 /* BarTableViewController.swift */,
+				118705802583E35C00847644 /* LineTableViewController.swift */,
 			);
-			path = "View Controllers";
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		31DDF90785E3A051CC1F5E88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56C87AC947D0315AB1234F02 /* Pods_HackDukeApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E74EB67F05BF2D9241674EE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8179EB46A05285D27543A69A /* Pods-HackDukeApp.debug.xcconfig */,
+				E0511A8AEA36EEACAF9FF275 /* Pods-HackDukeApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118A8EE6257BEEF800A5F3F1 /* Build configuration list for PBXNativeTarget "HackDukeApp" */;
 			buildPhases = (
+				4AA3F02349D04B0885C4E5CC /* [CP] Check Pods Manifest.lock */,
 				118A8ECE257BEEF600A5F3F1 /* Sources */,
 				118A8ECF257BEEF600A5F3F1 /* Frameworks */,
 				118A8ED0257BEEF600A5F3F1 /* Resources */,
+				1345CED1EC3281FCCB3F0A4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +225,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1345CED1EC3281FCCB3F0A4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackDukeApp/Pods-HackDukeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackDukeApp/Pods-HackDukeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackDukeApp/Pods-HackDukeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AA3F02349D04B0885C4E5CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackDukeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		118A8ECE257BEEF600A5F3F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -197,10 +274,13 @@
 			files = (
 				118A8F2C257C32A800A5F3F1 /* SelectorViewController.swift in Sources */,
 				11436B4C2582A256006496DF /* Inceptionv3.mlmodel in Sources */,
+				118705772583DD6300847644 /* Graph.swift in Sources */,
 				482E56A0257C662400D6D73F /* NewTransportationViewController.swift in Sources */,
 				118A8F2F257C35D500A5F3F1 /* Total.swift in Sources */,
 				118A8F35257C38CF00A5F3F1 /* FoodsViewController.swift in Sources */,
 				11436B4F2582A291006496DF /* MLClass.swift in Sources */,
+				118705812583E35C00847644 /* LineTableViewController.swift in Sources */,
+				1187057E2583E34B00847644 /* BarTableViewController.swift in Sources */,
 				118A8EDA257BEEF600A5F3F1 /* ViewController.swift in Sources */,
 				118A8F1F257C238100A5F3F1 /* HouseHoldViewController.swift in Sources */,
 				118A8ED6257BEEF600A5F3F1 /* AppDelegate.swift in Sources */,
@@ -351,6 +431,7 @@
 		};
 		118A8EE7257BEEF800A5F3F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8179EB46A05285D27543A69A /* Pods-HackDukeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +452,7 @@
 		};
 		118A8EE8257BEEF800A5F3F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0511A8AEA36EEACAF9FF275 /* Pods-HackDukeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

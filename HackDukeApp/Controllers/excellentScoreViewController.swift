@@ -36,7 +36,11 @@ class excellentScoreViewController: UIViewController {
         keepTrackOfScores.append(Int(ceilf(score)))
         defaults.set(keepTrackOfScores,forKey: "keepTrack")
         let currList = defaults.object(forKey: "keepTrack") ?? 0
-        print(currList,type(of: currList))
+        Total.dataList = currList as! [Int]
+        print(Total.dataList,type(of: Total.dataList))
+        
+      
+        
         switch Total.score {
         case 100:
             messageToUser.text = K.excellentStr + "\n" + K.endStr + "\n" 
@@ -89,5 +93,9 @@ class excellentScoreViewController: UIViewController {
 //        else {
 //            self.performSegue(withIdentifier: "veryPoorScore", sender: self)
 //        }
+    }
+    
+    @IBAction func graphButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toGraph", sender: self)
     }
 }
