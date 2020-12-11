@@ -33,6 +33,7 @@ class GoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         self.hideKeyboardWhenTappedAround()
         
+        
         // Input the data into the array
 
     }
@@ -117,7 +118,7 @@ class GoodsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBAction func leaveGoods(_ sender: UIButton) {
         if let thing = dicPick[pickedFood] {
             Total.subTotal = Float(thing)*Float(unitInput.text!)!
-            self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
+            //self.performSegue(withIdentifier: "goodsToSelector" , sender: self)
         }
         print("Try again with better picture")
         

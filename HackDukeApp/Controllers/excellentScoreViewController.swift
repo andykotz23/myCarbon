@@ -95,7 +95,14 @@ class excellentScoreViewController: UIViewController {
 //        }
     }
     
-    @IBAction func graphButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toGraph", sender: self)
+
+    
+    @IBAction func lineButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "scoreToLine", sender: self)
     }
+    
+    @IBAction func barButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "scoreToBar", sender: self)
+    }
+    
 }

@@ -26,7 +26,10 @@ class LineTableViewController: UITableViewController, ChartViewDelegate {
         view.addSubview(lineChart)
         var entries = [ChartDataEntry]()
         let dataList = Total.dataList
-        for i in 0...dataList.count - 1 {
+        let start = 0
+            //dataList.count - 5
+        let end = dataList.count - 1
+        for i in start...end{
             
             entries.append(ChartDataEntry(x: Double(i), y: Double(dataList[i])))
                 

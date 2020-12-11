@@ -19,14 +19,16 @@ class BarTableViewController: UITableViewController, ChartViewDelegate {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        //self.barChart.leftAxis.valueFormatter = []
         barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width,
                                 height: self.view.frame.size.width)
         barChart.center = view.center
         view.addSubview(barChart)
         var entries = [BarChartDataEntry]()
         let dataList = Total.dataList
-        for i in 0...dataList.count - 1 {
+        let start = dataList.count - 5
+        let end = dataList.count - 1
+        for i in start...end{
             
             entries.append(BarChartDataEntry(x: Double(i), y: Double(dataList[i])))
                 
@@ -37,6 +39,7 @@ class BarTableViewController: UITableViewController, ChartViewDelegate {
         let data = BarChartData(dataSet: set)
         
         barChart.data = data
+        
     }
 
     // MARK: - Table view data source
