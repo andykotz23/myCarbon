@@ -418,7 +418,7 @@ Very Poor: 0 to 10</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.522177577" green="0.69636505839999996" blue="0.52557051180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.5275706053" green="0.73302572970000002" blue="0.56007039550000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JoX-Qs-8WM"/>
@@ -877,7 +877,7 @@ Very Poor: 0 to 10</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jMx-yi-RuM"/>
+        <segue reference="4IW-S7-H2y"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logov3.png" width="462" height="347"/>
